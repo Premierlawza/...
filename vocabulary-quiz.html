@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Translation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .question-list {
+            margin-top: 30px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .submit-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vocabulary Translation</h1>
+        <div class="question-list">
+            <!-- Question 1 -->
+            <div class="question">
+                <label for="q1">1. Translate "dog" to Thai:</label>
+                <input type="text" id="q1" placeholder="Your answer">
+                <div id="error-q1" class="error-message"></div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <label for="q2">2. Translate "apple" to Thai:</label>
+                <input type="text" id="q2" placeholder="Your answer">
+                <div id="error-q2" class="error-message"></div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <label for="q3">3. Translate "school" to Thai:</label>
+                <input type="text" id="q3" placeholder="Your answer">
+                <div id="error-q3" class="error-message"></div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <label for="q4">4. Translate "car" to Thai:</label>
+                <input type="text" id="q4" placeholder="Your answer">
+                <div id="error-q4" class="error-message"></div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <label for="q5">5. Translate "book" to Thai:</label>
+                <input type="text" id="q5" placeholder="Your answer">
+                <div id="error-q5" class="error-message"></div>
+            </div>
+            
+                        <!-- Question 6 -->
+                        <div class="question">
+                            <label for="q6">6. Translate "also" to Thai:</label>
+                            <input type="text" id="q6" placeholder="Your answer">
+                            <div id="error-q6" class="error-message"></div>
+                        </div>
+
+                                    <!-- Question 7 -->
+            <div class="question">
+                <label for="q7">7. Translate "appear" to Thai:</label>
+                <input type="text" id="q7" placeholder="Your answer">
+                <div id="error-q7" class="error-message"></div>
+            </div>
+
+                        <!-- Question 8 -->
+                        <div class="question">
+                            <label for="q8">8. Translate "among" to Thai:</label>
+                            <input type="text" id="q8" placeholder="Your answer">
+                            <div id="error-q8" class="error-message"></div>
+                        </div>
+
+                                    <!-- Question 9 -->
+            <div class="question">
+                <label for="q9">9. Translate "basket" to Thai:</label>
+                <input type="text" id="q9" placeholder="Your answer">
+                <div id="error-q9" class="error-message"></div>
+            </div>
+
+                        <!-- Question 10 -->
+                        <div class="question">
+                            <label for="q10">10. Translate "begin" to Thai:</label>
+                            <input type="text" id="q10" placeholder="Your answer">
+                            <div id="error-q10" class="error-message"></div>
+                        </div>
+
+                                    <!-- Question 11 -->
+            <div class="question">
+                <label for="q11">11. Translate "both" to Thai:</label>
+                <input type="text" id="q11" placeholder="Your answer">
+                <div id="error-q11" class="error-message"></div>
+            </div>
+
+                        <!-- Question 12 -->
+                        <div class="question">
+                            <label for="q12">12. Translate "captial" to Thai:</label>
+                            <input type="text" id="q12" placeholder="Your answer">
+                            <div id="error-q12" class="error-message"></div>
+                        </div>
+
+                                    <!-- Question 13 -->
+            <div class="question">
+                <label for="q13">13. Translate "carry" to Thai:</label>
+                <input type="text" id="q13" placeholder="Your answer">
+                <div id="error-q13" class="error-message"></div>
+            </div>
+
+                        <!-- Question 14 -->
+                        <div class="question">
+                            <label for="q14">14. Translate "century" to Thai:</label>
+                            <input type="text" id="q14" placeholder="Your answer">
+                            <div id="error-q14" class="error-message"></div>
+                        </div>
+
+                                    <!-- Question 15 -->
+            <div class="question">
+                <label for="q15">15. Translate "compare" to Thai:</label>
+                <input type="text" id="q15" placeholder="Your answer">
+                <div id="error-q15" class="error-message"></div>
+            </div>
+
+                        <!-- Question 16 -->
+                        <div class="question">
+                            <label for="q16">16. Translate "dentist" to Thai:</label>
+                            <input type="text" id="q16" placeholder="Your answer">
+                            <div id="error-q16" class="error-message"></div>
+                        </div>
+
+                                    <!-- Question 17 -->
+            <div class="question">
+                <label for="q17">17. Translate "discuss" to Thai:</label>
+                <input type="text" id="q17" placeholder="Your answer">
+                <div id="error-q17" class="error-message"></div>
+            </div>
+
+                        <!-- Question 18 -->
+                        <div class="question">
+                            <label for="q18">18. Translate "during" to Thai:</label>
+                            <input type="text" id="q18" placeholder="Your answer">
+                            <div id="error-q18" class="error-message"></div>
+                        </div>
+
+                                    <!-- Question 19 -->
+            <div class="question">
+                <label for="q19">19. Translate "especially" to Thai:</label>
+                <input type="text" id="q19" placeholder="Your answer">
+                <div id="error-q19" class="error-message"></div>
+            </div>
+
+                        <!-- Question 20 -->
+                        <div class="question">
+                            <label for="q20">20. Translate "expect" to Thai:</label>
+                            <input type="text" id="q20" placeholder="Your answer">
+                            <div id="error-q20" class="error-message"></div>
+                        </div>
+                                    <!-- Question 21 -->
+            <div class="question">
+                <label for="q21">21. Translate "flag" to Thai:</label>
+                <input type="text" id="q21" placeholder="Your answer">
+                <div id="error-q21" class="error-message"></div>
+            </div>
+
+                        <!-- Question 22 -->
+                        <div class="question">
+                            <label for="q22">22. Translate "force" to Thai:</label>
+                            <input type="text" id="q22" placeholder="Your answer">
+                            <div id="error-q22" class="error-message"></div>
+                        </div>
+
+                                    <!-- Question 23 -->
+            <div class="question">
+                <label for="q23">23. Translate "general" to Thai:</label>
+                <input type="text" id="q23" placeholder="Your answer">
+                <div id="error-q23" class="error-message"></div>
+            </div>
+
+                        <!-- Question 24 -->
+                        <div class="question">
+                            <label for="q24">24. Translate "govern" to Thai:</label>
+                            <input type="text" id="q24" placeholder="Your answer">
+                            <div id="error-q24" class="error-message"></div>
+                        </div>
+
+                                    <!-- Question 25 -->
+            <div class="question">
+                <label for="q25">25. Translate "history" to Thai:</label>
+                <input type="text" id="q25" placeholder="Your answer">
+                <div id="error-q25" class="error-message"></div>
+            </div>
+        </div>
+        
+        <div class="submit-container">
+            <button onclick="checkAnswers()">Submit Answers</button>
+        </div>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            let totalQuestions = 25; // Set this to 100 when you add all questions
+
+            // Correct answers
+            const answers = {
+                q1: 'หมา' , 
+                q2: 'แอปเปิ้ล',
+                q3: 'โรงเรียน',
+                q4: 'รถ',
+                q5: 'หนังสือ' ,
+                q6: 'ด้วย' ,
+                q7: 'ปรากฎ' ,
+                q8: 'ระหว่าง' ,
+                q9: 'ตะกร้า' ,
+                q10: 'เริ่ม' ,
+                q11: 'ทั้งคู่' ,
+                q12: 'เมืองหลวง' ,
+                q13: 'ถือ' ,
+                q14: 'ศตวรรษ' ,
+                q15: 'เปรียบเทียบ' ,
+                q16: 'หมอฟัน' ,
+                q17: 'อภิปราย' ,
+                q18: 'ระหว่าง' ,
+                q19: 'โดยเฉพาะ' ,
+                q20: 'คาดหมาย' ,
+                q21: 'ธง' ,
+                q22: 'แรง' ,
+                q23: 'ทั่วไป' ,
+                q24: 'ปกครอง' ,
+                q25: 'ประวัติศาสตร์' 
+                
+            
+            
+            };
+
+            // Clear previous error messages
+            for (let i = 1; i <= totalQuestions; i++) {
+                document.getElementById('error-q' + i).textContent = '';
+                document.getElementById('q' + i).style.borderColor = '#ccc'; // Reset border color
+            }
+
+            // Check each answer
+            for (let i = 1; i <= totalQuestions; i++) {
+                const userAnswer = document.getElementById('q' + i).value.trim().toLowerCase();
+                const correctAnswer = answers['q' + i].toLowerCase();
+
+                // If the answer is correct
+                if (userAnswer === correctAnswer) {
+                    score++;
+                    document.getElementById('q' + i).style.borderColor = 'green'; // Highlight correct answers
+                } else {
+                    // Display error message for incorrect answers
+                    document.getElementById('q' + i).style.borderColor = 'red'; // Highlight incorrect answers
+                    document.getElementById('error-q' + i).textContent = 'ผิด! คำตอบที่ถูกต้องคือ: ' + correctAnswer;
+                }
+            }
+
+            // Show result
+            const result = document.getElementById('result');
+            if (score === totalQuestions) {
+                result.innerHTML = `<span class="correct">Correct! You answered all questions correctly.</span>`;
+            } else {
+                result.innerHTML = `<span class="incorrect">You got ${score} out of ${totalQuestions} correct. Please try again.</span>`;
+            }
+        }
+    </script>
+</body>
+</html>

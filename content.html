@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Selection</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .card h1 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            text-align: center;
+            color: #fff;
+            background-color: #3b82f6;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 8px;
+        }
+        .btn:hover {
+            background-color: #2563eb;
+        }
+    </style>
+    <script>
+        function goToQuiz(topic) {
+            if (topic === 'grammar') {
+                window.location.href = 'grammar-quiz.html';
+            } else if (topic === 'vocabulary') {
+                window.location.href = 'vocabulary-quiz.html';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="card">
+        <h1>Select Quiz Topic</h1>
+        <button class="btn" onclick="goToQuiz('grammar')">Grammar Quiz</button>
+        <button class="btn" onclick="goToQuiz('vocabulary')">Vocabulary Quiz</button>
+    </div>
+</body>
+</html>

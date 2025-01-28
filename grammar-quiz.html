@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .question-list {
+            margin-top: 30px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .submit-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grammar Questions</h1>
+        <div class="question-list">
+            <div class="question">
+                <label for="q1">1. What is the correct form of the verb in this sentence? "She _____ to the store every day." (go/goes)</label>
+                <input type="text" id="q1" placeholder="Your answer">
+                <div id="error-q1" class="error-message"></div>
+            </div>
+            <div class="question">
+                <label for="q2">2. Choose the correct sentence: (He don't/He doesn't) like ice cream.</label>
+                <input type="text" id="q2" placeholder="Your answer">
+                <div id="error-q2" class="error-message"></div>
+            </div>
+            <div class="question">
+                <label for="q3">3. Which word is an adjective? (quickly/quick)</label>
+                <input type="text" id="q3" placeholder="Your answer">
+                <div id="error-q3" class="error-message"></div>
+            </div>
+            <div class="question">
+                <label for="q4">4. Complete the sentence: "I have _____ apples." (some/any)</label>
+                <input type="text" id="q4" placeholder="Your answer">
+                <div id="error-q4" class="error-message"></div>
+            </div>
+            <div class="question">
+                <label for="q5">5. Choose the correct sentence: (She can/can she) swim?</label>
+                <input type="text" id="q5" placeholder="Your answer">
+                <div id="error-q5" class="error-message"></div>
+            </div>
+            <div class="question">
+                <label for="q6">6. Which word is a noun? (run/runner)</label>
+                <input type="text" id="q6" placeholder="Your answer">
+                <div id="error-q6" class="error-message"></div>
+            </div>
+            <div class="question">
+                <label for="q7">7. Which sentence is in the past tense? (I am eating/I ate)</label>
+                <input type="text" id="q7" placeholder="Your answer">
+                <div id="error-q7" class="error-message"></div>
+            </div>
+            <div class="question">
+                <label for="q8">8. Choose the correct word: "She _____ the book on the table." (put/puts)</label>
+                <input type="text" id="q8" placeholder="Your answer">
+                <div id="error-q8" class="error-message"></div>
+            </div>
+            <div class="question">
+                <label for="q9">9. What is the plural form of "child"? (children/childs)</label>
+                <input type="text" id="q9" placeholder="Your answer">
+                <div id="error-q9" class="error-message"></div>
+            </div>
+            <div class="question">
+                <label for="q10">10. Complete the sentence: "We are going _____ the park." (to/for)</label>
+                <input type="text" id="q10" placeholder="Your answer">
+                <div id="error-q10" class="error-message"></div>
+            </div>
+            <div class="question">
+                <label for="q11">11. Choose the correct word: "He is taller _____ me." (than/then)</label>
+                <input type="text" id="q11" placeholder="Your answer">
+                <div id="error-q11" class="error-message"></div>
+            </div>
+            <div class="question">
+                <label for="q12">12. Which sentence is in future tense? (I will go/I went)</label>
+                <input type="text" id="q12" placeholder="Your answer">
+                <div id="error-q12" class="error-message"></div>
+            </div>
+        </div>
+        
+        <div class="submit-container">
+            <button onclick="checkAnswers()">Submit Answers</button>
+        </div>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            let totalQuestions = 12; // Updated to 12 questions
+
+            // Correct answers
+            const answers = {
+                q1: 'goes',
+                q2: "He doesn't",
+                q3: 'quick',
+                q4: 'some',
+                q5: 'can she',
+                q6: 'runner',
+                q7: 'I ate',
+                q8: 'puts',
+                q9: 'children',
+                q10: 'to',
+                q11: 'than',
+                q12: 'I will go'
+                // Add other answers if needed
+            };
+
+            // Clear previous error messages
+            for (let i = 1; i <= totalQuestions; i++) {
+                document.getElementById('error-q' + i).textContent = '';
+                document.getElementById('q' + i).style.borderColor = '#ccc'; // Reset border color
+            }
+
+            // Check each answer
+            for (let i = 1; i <= totalQuestions; i++) {
+                const userAnswer = document.getElementById('q' + i).value.trim().toLowerCase();
+                const correctAnswer = answers['q' + i].toLowerCase();
+
+                // If the answer is correct
+                if (userAnswer === correctAnswer) {
+                    score++;
+                    document.getElementById('q' + i).style.borderColor = 'green'; // Highlight correct answers
+                } else {
+                    // Display error message for incorrect answers
+                    document.getElementById('q' + i).style.borderColor = 'red'; // Highlight incorrect answers
+                    document.getElementById('error-q' + i).textContent = 'ผิด! คำตอบที่ถูกต้องคือ: ' + correctAnswer;
+                }
+            }
+
+            // Show result
+            const result = document.getElementById('result');
+            if (score === totalQuestions) {
+                result.innerHTML = `<span class="correct">Correct! You answered all questions correctly.</span>`;
+            } else {
+                result.innerHTML = `<span class="incorrect">You got ${score} out of ${totalQuestions} correct. Please try again.</span>`;
+            }
+        }
+    </script>
+</body>
+</html>
